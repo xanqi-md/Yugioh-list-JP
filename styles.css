@@ -1,8 +1,6 @@
-/* 2025年トレンド・カジュアルデザイン */
-
 :root {
-  --primary-color: #22223b; /* メインカラー: 黒 */
-  --accent-color: #fbbf24;  /* サブカラー: 黄色 */
+  --primary-color: #22223b; 
+  --accent-color: #fbbf24;  
   --text-color: #22223b;
   --bg-color: #f8fafc;
   --card-bg: #ffffffcc;
@@ -33,24 +31,23 @@ body {
 
 h1 {
   color: var(--primary-color);
-  font-size: 5rem; /* タイトルも大きく */
+  font-size: 5rem; 
   font-weight: 800;
   margin-bottom: 2rem;
   letter-spacing: -1px;
   text-align: center;
 }
 
-/* Table styles */
 .table-container {
   overflow-x: auto;
   margin-bottom: 2rem;
-  /* テーブル中央寄せ */
+
   display: flex;
   justify-content: center;
 }
 
 table {
-  width: 90%; /* 横幅を90%（ビューポート基準）まで拡張 */
+  width: 90%;
   min-width: 520px;
   max-width: 90%;
   border-collapse: separate;
@@ -59,7 +56,7 @@ table {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   overflow: hidden;
-  font-size: 2.25rem; /* 3rem → 約75% */
+  font-size: 2.25rem; 
   text-align: center;
   table-layout: auto;
 }
@@ -69,8 +66,8 @@ th, td {
   border-bottom: 1px solid var(--border-color);
   text-align: left;
   vertical-align: middle;
-  min-width: 140px;
-  font-size: 1.4rem
+  min-width: 100px;
+  font-size: 1.4rem;
 }
 
 th {
@@ -97,7 +94,6 @@ tbody tr:hover {
   transition: background 0.2s;
 }
 
-/* レアリティ色分け（クラス指定推奨） */
 td.rarity-UR {
   color: #7A33FF;
 }
@@ -111,14 +107,12 @@ td.rarity-N {
   color: #474342;
 }
 
-/* カード名セル */
 td:nth-child(3) {
   font-weight: 700;
   color: var(--primary-color);
-  font-size:1.3rem;
+  font-size:1.8rem;
 }
 
-/* 角丸 */
 thead tr th:first-child {
   border-top-left-radius: var(--border-radius);
 }
@@ -132,7 +126,6 @@ tbody tr:last-child td:last-child {
   border-bottom-right-radius: var(--border-radius);
 }
 
-/* 検索窓ラッパーとラベルのデザイン追加 */
 .search-area {
   display: flex;
   flex-direction: column;
@@ -142,7 +135,7 @@ tbody tr:last-child td:last-child {
 }
 
 .search-label {
-  font-size: 2.5rem; /* 検索ラベルも大きく */
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--primary-color);
   letter-spacing: 0.02em;
@@ -153,13 +146,12 @@ tbody tr:last-child td:last-child {
   transition: background 0.2s;
 }
 
-/* 検索窓スタイル */
 #searchInput {
   margin-bottom: 0;
   width: 100%;
   max-width: 500px;
   padding: 0.8rem 1.2rem;
-  font-size: 1.5rem; /* 検索窓も大きく */
+  font-size: 1.5rem; 
   border-radius: 14px;
   border: 1.5px solid var(--border-color);
   box-sizing: border-box;
@@ -174,22 +166,73 @@ tbody tr:last-child td:last-child {
   box-shadow: 0 4px 16px 0 rgba(251,191,36,0.10);
 }
 
-/* レスポンシブ */
 @media (max-width: 600px) {
-  .container {
-    padding: 0.5rem;
+
+  body {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+  }
+  h1 {
+    font-size: 2rem; 
+    margin-bottom: 1.2rem;
+  }
+
+  .search-area {
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+  .search-label {
+    font-size: 1.1rem;
+    padding: 0.4rem 0.8rem;
+  }
+  #searchInput {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .table-container {         
+    overflow-x: visible;
   }
   table {
-    font-size: 1rem;
-    min-width: 340px;
-    width: auto; /* 右余白をなくす */
-    table-layout: fixed;
+    width: 100%;
+    min-width: 0;
+    border-spacing: 0;
   }
-  th, td {
-    font-size: 1.7rem;
-    padding: 0.5rem 0.3rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  thead {
+    display: none;
+  }
+  tbody, tr, td {
+    display: block;
+    width: 100%;
+  }
+
+  tbody tr {
+    margin-bottom: 1rem;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+  }
+
+  tbody tr td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1rem;
+  }
+  tbody tr td:last-child {
+    border-bottom: none;
+  }
+  td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+  }
+  td:nth-child(3) {
+    font-size: 1.2rem;
   }
 }
