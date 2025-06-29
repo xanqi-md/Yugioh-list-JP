@@ -33,7 +33,7 @@ body {
 
 h1 {
   color: var(--primary-color);
-  font-size: 2.5rem; /* タイトルも大きく */
+  font-size: 5rem; /* タイトルも大きく */
   font-weight: 800;
   margin-bottom: 2rem;
   letter-spacing: -1px;
@@ -69,7 +69,7 @@ th, td {
   border-bottom: 1px solid var(--border-color);
   text-align: left;
   vertical-align: middle;
-  min-width: 160px;
+  min-width: 140px;
   font-size: 1.4rem
 }
 
@@ -115,7 +115,7 @@ td.rarity-N {
 td:nth-child(3) {
   font-weight: 700;
   color: var(--primary-color);
-  font-size: 2.25rem; /* 3rem → 約75% */
+  font-size:1.3rem;
 }
 
 /* 角丸 */
@@ -142,7 +142,7 @@ tbody tr:last-child td:last-child {
 }
 
 .search-label {
-  font-size: 1.25rem; /* 検索ラベルも大きく */
+  font-size: 2.5rem; /* 検索ラベルも大きく */
   font-weight: 700;
   color: var(--primary-color);
   letter-spacing: 0.02em;
@@ -157,9 +157,9 @@ tbody tr:last-child td:last-child {
 #searchInput {
   margin-bottom: 0;
   width: 100%;
-  max-width: 340px;
+  max-width: 500px;
   padding: 0.8rem 1.2rem;
-  font-size: 1.18rem; /* 検索窓も大きく */
+  font-size: 1.5rem; /* 検索窓も大きく */
   border-radius: 14px;
   border: 1.5px solid var(--border-color);
   box-sizing: border-box;
